@@ -6,28 +6,33 @@
 }
 
 .contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    
+    
+}
+.contenedor__label{
+    font-size: 1rem;
 }
 
-.contenedor__elegir {
-    display: flex;
-    margin: 1rem;
+.contenedor__lado {
+    display: inline;
+   
 }
 
-.contenedor__checkbox {
+.contenedor__checkbox{
     margin-left: 0.5rem;
+    
 }
+
+
 
 .contenedor__tablero {
     display: flex;
     flex-wrap: wrap;
-    height: 40rem;
-    width: 40rem;
+    height: 30rem;
+    width: 30rem;
     border: 1rem solid;
     border-color: black;
+    margin: 1rem;
 }
 
 .piezas {
@@ -50,4 +55,119 @@
     background-color: grey;
 }
 
-.contenedor__elegir-pregunta {}
+.contenedor__tablero-flex{
+    display:flex;
+   
+    align-items: center;
+    justify-content: center;
+}
+
+
+#lado_negro:checked ~ .contenedor__tablero-flex .piezas{
+	animation-name: rotacion;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    
+}#lado_negro:checked ~ .contenedor__tablero-flex {
+	animation-name: rotacion;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    
+}
+
+
+@keyframes rotacion {
+    0% {
+      transform:rotate(0deg);
+    }
+    100% {
+      transform:rotate(180deg);
+    }
+  }
+
+  @media (max-width: 480px){
+    .contenedor__tablero {
+      
+        height: 13rem;
+        width: 13rem;
+        border: 0.5rem solid;
+        
+    }
+    .piezas {
+        font-size: 1rem;
+    }
+    
+    
+  }
+
+  @media (min-width: 481px) and (max-width: 1024px){
+    .contenedor__tablero {
+      
+        height: 24rem;
+        width: 24rem;
+        border: 1rem solid;
+        
+    }
+    .piezas {
+        font-size: 1.5rem;
+    }
+    .contenedor__label{
+        font-size: 2rem;
+    }
+
+    .contenedor__checkbox{
+       
+        transform: scale(2); 
+        
+    }
+    
+    
+    
+  }
+
+  
+  @media (min-width: 1025px) and (max-width: 1440px){
+    .contenedor__tablero {
+      
+        height: 35rem;
+        width: 35rem;
+        border: 1.5rem solid;
+        
+    }
+    .piezas {
+        font-size: 2.5rem;
+    }
+    .contenedor__label{
+        font-size: 2.5rem;
+    }
+    .contenedor__checkbox{
+       
+        transform: scale(2.5); 
+        
+    }
+    
+    
+  }
+  @media (min-width: 1441px) {
+    .contenedor__tablero {
+      
+        height: 45rem;
+        width: 45rem;
+        border: 2.5rem solid;
+        
+    }
+    .contenedor__label{
+        font-size: 3.5rem;
+    }
+    .piezas {
+        font-size: 3.5rem;
+    }
+    .contenedor__checkbox{
+       
+        transform: scale(3); 
+        
+    }
+    
+  }
