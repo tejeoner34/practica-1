@@ -11,13 +11,37 @@
 
 <body class="body">
     <header class="header">
+        <!--solo se va a ver en version movil -->
+        <img src="./mod/img/logo.svg" alt="" class="header__img">
+        <input type="checkbox" name="hamburguesa" id="hamburguesa" class="header__hamburguesa">
+        <label for="hamburguesa" class="header__hamburguesa-icono"> ☰ </label>
+        <label for="hamburguesa" class="header__hamburguesa-icono__x"> × </label>
+
+        <!--solo se va a ver en version ordenador -->
+        <img src="./mod/img/logo.svg" alt="" class="header__img-ordenador">
+
+        <!-- contenedor de los navegadores -->
+        <nav class="header__nav">
+            <div class="header__nav-container"> <a href="../landing-page/index.html" class="header__nav-links">HOME</a></div>
+            <div class="header__nav-container"><a href="../tablero/tablero.html" class="header__nav-links">BOARD</a></div>
+            <div class="header__nav-container"> <a href="../tablero/tablero.html" class="header__nav-links">CONTACTO</a></div>
+
+        </nav>
+        <!-- contenedor de los iconos -->
+        <div class="header__iconos">
+            <div class="header__iconos-imagen"><img src="./mod/img/facebook.png" alt="" class="header__iconos-imagen"></div>
+            <div class="header__iconos-imagen"><img src="./mod/img/twitterlogo.png" alt="" class="header__iconos-imagen"></div>
+            <div class="header__iconos-imagen"><img src="./mod/img/youtube.png" alt="" class="header__iconos-imagen"></div>
+            <div class="header__iconos-imagen"><img src="./mod/img/insta.png" alt="" class="header__iconos-imagen"></div>
+
+        </div>
 
     </header>
     <main class="main">
         <div class="banner">
             <div class="banner__video-containerr">
                 <video autoplay muted="muted" loop type="video/mp4" class="banner__video"
-                    src="\videos\pexels-kelly-lacy-9698456.mp4"></video>
+                    src="/landing-page/videos/pexels-kelly-lacy-9698456.mp4"></video>
                 <div class="banner__background--opacity"></div>
             </div>
             <div class="banner__text">
@@ -36,7 +60,7 @@
                     </div>
                     <div class="location-section__img-container">
                         <div class="location-section__img-container--background"></div>
-                        <img class="location-section__img" src="\imagenes\pexels-pixabay-417173.jpg" alt="foto montaña">
+                        <img class="location-section__img" src="/landing-page/imagenes/pexels-pixabay-417173.jpg" alt="foto montaña">
                     </div>
                     <p class="location-section__text">Montaña</p>
                 </div>
@@ -47,7 +71,7 @@
                     </div>
                     <div class="location-section__img-container">
                         <div class="location-section__img-container--background"></div>
-                        <img class="location-section__img" src="\imagenes\pexels-s-migaj-747964.jpg" alt="foto lago">
+                        <img class="location-section__img" src="/landing-page/imagenes/pexels-s-migaj-747964.jpg" alt="foto lago">
                     </div>
                     <p class="location-section__text">Lago</p>
                 </div>
@@ -59,7 +83,7 @@
                     </div>
                     <div class="location-section__img-container">
                         <div class="location-section__img-container--background"></div>
-                        <img class="location-section__img" src="\imagenes\pexels-belle-co-847393.jpg" alt="foto oceano">
+                        <img class="location-section__img" src="/landing-page/imagenes/pexels-belle-co-847393.jpg" alt="foto oceano">
                     </div>
                     <p class="location-section__text">Océano</p>
                 </div>
