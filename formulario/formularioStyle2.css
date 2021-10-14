@@ -274,8 +274,8 @@
                         }
 
                         .caja11{
-                            display: grid;
-                            grid-template-columns: repeat(3,5fr);  
+                            display: flex;
+                            flex-direction: column;
                         }
                             .recomendar_pagina{
                                 display: grid;
