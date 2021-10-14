@@ -291,6 +291,11 @@
     .piezas {
         font-size: 1rem;
     }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
     
     
   }
@@ -314,6 +319,11 @@
        
         transform: scale(2); 
         
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
     }
     
     

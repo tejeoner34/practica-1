@@ -1,12 +1,15 @@
 @font-face {
     font-family: 'Oswald', sans-serif;
-    src: url('fonts/Oswald-VariableFont_wght.ttf') format('ttf');
+    src: local("\fonts\Oswald-VariableFont_wght.ttf") format(TrueType);
 }
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+
 }
 
 
@@ -16,38 +19,223 @@
     display:flex;
     min-height: 100vh;
     flex-wrap: wrap;
-    font-family: oswald, sans-serif ;
-    color:azure;
-    font-size:x-small;
+    /*color:azure;*/
     
 
 }
 
 
-        .header_container{
-            background-color: aqua;
-            width: 100%;
-            height: 60%;
-            min-height: 60px;
-        }
+/* de aqui hasta el siguiente comentario hago los cambios para que se vea en movil de forma diferente haciendo que desaparezcan y aparezcan contenedores */
 
+.header__hamburguesa {
+    display: none;
+}
+
+.header__hamburguesa-icono {
+    display: none;
+    position: relative;
+    left: 40%;
+    font-size: 2rem;
+}
+
+.header__hamburguesa-icono__x {
+    display: none;
+    position: relative;
+    left: 40%;
+    font-size: 3rem;
+}
+
+.header__img {
+    display: none;
+    width: 7rem;
+}
+
+
+/* aqui empieza la version ordenador dividida en 3 contenedores una para el logo otra para los enlaces de navegacion y otra para los iconos de redes */
+
+.header__img-ordenador {
+    width: 7rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid;
+    border-color: orange;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+}
+
+.header__nav {
+    display: inline-flex;
+}
+
+.header__nav-links {
+    margin: 0.5rem;
+    text-decoration: none;
+    color: #1b1c20;
+}
+
+.header__nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+}
+
+
+/* hover para los enlaces de navegacion */
+
+.header__nav-container:hover {
+    background-color: #1b1c20;
+}
+
+.header__nav-container:hover>.header__nav-links {
+    color: white;
+    text-decoration: underline;
+}
+
+.header__iconos {
+    display: flex;
+    margin: 1rem;
+}
+
+.header__iconos-imagen {
+    background-size: cover;
+    margin: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: black 1rem;
+}
+
+
+/* hover para la ampliacion de los iconos de redes */
+
+.header__iconos-imagen:hover {
+    transform: scale(1.25);
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+}
+
+
+/* codigo para el responsive de moviles */
+
+@media (max-width: 481px) {
+    .header__img-ordenador {
+        display: none;
+    }
+    .header__img {
+        display: inline;
+    }
+    .header {
+        display: inline-block;
+    }
+    .header__nav {
+        display: none;
+    }
+    .header__iconos {
+        display: none;
+        margin: 0;
+    }
+    .header__hamburguesa {
+        display: inline;
+        visibility: hidden;
+    }
+    .header__hamburguesa-icono {
+        display: inline;
+    }
+    .header__hamburguesa:checked~.header__nav {
+        display: block;
+    }
+    .header__hamburguesa:checked~.header__iconos {
+        display: inline-flex;
+    }
+    .header__hamburguesa:checked~.header__hamburguesa-icono__x {
+        display: inline;
+    }
+    .header__hamburguesa:checked~.header__hamburguesa-icono {
+        display: none;
+    }
+}
+
+
+/* codigo para el responsive de tablets */
+
+@media (min-width: 481px) and (max-width: 1023px) {
+    .header__img-ordenador {
+        display: none;
+    }
+    .header__img {
+        display: inline;
+    }
+    .header {
+        display: inline-block;
+    }
+    .header__nav {
+        display: none;
+    }
+    .header__iconos {
+        display: none;
+        margin: 0;
+    }
+    .header__hamburguesa {
+        display: inline;
+        visibility: hidden;
+    }
+    .header__hamburguesa-icono {
+        display: inline;
+        left: 70%;
+    }
+    .header__hamburguesa:checked~.header__nav {
+        display: block;
+    }
+    .header__hamburguesa:checked~.header__iconos {
+        display: inline-flex;
+    }
+    .header__hamburguesa:checked~.header__hamburguesa-icono__x {
+        display: inline;
+        left: 70%;
+    }
+    .header__hamburguesa:checked~.header__hamburguesa-icono {
+        display: none;
+    }
+}
+
+        
 
 
         .main_container{
-            background-image: url('fondo_formulario.jpg');
-            opacity: 0.8;
+            background:linear-gradient(rgba(5, 5, 5, 0.5), rgba(0, 0, 0, 0.5) 20%),
+            url('fondo_formulario.jpg'), fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
             width: 100%;
-            gap: 0.3rem;
-            
+            gap: 0.7rem;
+            color: azure;
+            padding: 2em;
+        }
+
+        .title {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2em;
+        }
+
+        .title p:last-child {
+            font-style: italic;
+            font-size: 0.7em;
         }
             
                 .formulario_contacto{
                     font-weight: bold;
-                    font-size: x-large;
+                    font-size: 2.3em;
                     
                     
                 }
@@ -55,11 +243,13 @@
                     text-align: center;
                     display: flex;
                     flex-direction: column;
-                    gap:0.3rem;
+                    gap:0.7rem;
                 }            
                         .in{
-                            width: 35%;
-                            font-family: oswald;
+                            width: 75%;
+                            max-width: 450px;
+                            padding: 0.6em;
+                            border-radius: 5px;
                         }
                         
                         select{
@@ -71,12 +261,14 @@
                         }
                         
                         .div_checkbox_1{
-                            display: grid;
-                            grid-template-columns: repeat(3,5fr);  
+                            display: flex;
+                            flex-direction: column;
+                            margin: 2em;
                         }
                             
                         .div_checkbox_2{
                             display: grid;
+                            gap: 1.5em;
                             justify-items: start;
                             justify-content: center;    
                         }
@@ -87,6 +279,7 @@
                         }
                             .recomendar_pagina{
                                 display: grid;
+                                gap: 1em;
                                 justify-items: start;
                                 justify-content: center;
                             }
@@ -103,15 +296,24 @@
                             .radio_eleccion{
                                 margin-right: 1rem;
                                 margin-left: 1rem;
+                                filter: grayscale(1)
+                            }
+
+                            .comment {
+                                padding-bottom: 3em;
                             }
                             
+                            @media (max-width: 450px){
+                                .in {
+                                    width: 100%;
+                                }
+                            }
                                 
 
-        .footer_container{
-            width: 100%;
-            height: 20%;
-            align-self: flex-end; /* alinea todo al final */
-            background-color: rgb(30, 168, 71);
-            display: flex;
-            
-        }
+.footer {
+    width: 100%;
+    background-color: #1b1c20;
+    color: #ffffff;
+    padding: 1.5em;
+    text-align: center;
+}
